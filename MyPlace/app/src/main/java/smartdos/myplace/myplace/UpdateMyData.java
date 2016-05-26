@@ -54,11 +54,12 @@ public class UpdateMyData extends AppCompatActivity implements View.OnClickListe
 
         URLConnection connection = new URL(Url).openConnection();
         connection.setRequestProperty("Accept-Charset", charset);
+
         InputStream response = connection.getInputStream();
     }
 
     public void sendDataToServer(Boolean MyPlaceInUse, Integer NeedMorePlaces) throws IOException {
-        String url = "http://example.com";
+        String url = "http://example.com/";
         String charset = "UTF-8";  // Or in Java 7 and later, use the constant: java.nio.charset.StandardCharsets.UTF_8.name()
         String param1 = "value1";
         String param2 = "value2";
@@ -78,7 +79,7 @@ public class UpdateMyData extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         Boolean MyPlaceInUse;
         Integer NeededMorePlace;
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_update_my_data);
 
         mySwitch = (Switch) findViewById(R.id.switch1);
         NumberOfNeedPlaces = (NumberPicker) findViewById(R.id.numberPicker2);
